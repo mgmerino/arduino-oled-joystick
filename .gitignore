@@ -10,8 +10,12 @@
 *.userosscache
 *.sln.docstates
 
+.vscode/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+arduino_secrets.h
+CppProperties.json
 
 # Mono auto generated files
 mono_crash.*
@@ -352,4 +356,3 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-.vscode/
