@@ -2,29 +2,29 @@
   Joystick Class
 */
 #include <Arduino.h>
+
 #include "Screen.h"
 
-#ifndef Joystick_h
-#define Joystick_h
+#ifndef JOYSTICK_H_
+#define JOYSTICK_H_
 
-class Joystick
-{
-  public:
-    Joystick(Screen *screen);
-    bool init();
-    void read();
-  private:
-    Screen *_screen;
-    unsigned long interrupt_time1;
-    unsigned long interrupt_time2;  
-    unsigned long last_interrupt_time1;
-    unsigned long last_interrupt_time2;
-    volatile boolean buttonFlag;
-    int joyX;
-    int joyY;
-    boolean xValid;
-    boolean yValid;
-    void resetFlags();
+class Joystick {
+ public:
+  Joystick(Screen *screen);
+  bool init();
+  void read();
+
+ private:
+  Screen *_screen;
+  int joyX = 0;
+  int joyY = 0;
+  unsigned long interrupt_time1 = 0;
+  unsigned long interrupt_time2 = 0;
+  unsigned long last_interrupt_time1 = 0;
+  unsigned long last_interrupt_time2 = 0;
+  volatile boolean buttonFlag = false;
+  boolean xValid = true;
+  boolean yValid = false;
 };
 
-#endif
+#endif  // JOYSTICK_H_
